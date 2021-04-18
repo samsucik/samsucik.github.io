@@ -1,0 +1,13 @@
+{%- comment -%}
+  Include vars:
+  src
+  alt
+{%- endcomment -%}
+<!-- Image -->
+<div class="image">
+	<img src="{{- include.src | relative_url -}}" 
+     	 alt="{{- include.alt | default include.src -}}"
+	 	 data-action="zoom"
+	 	 class="image fit"
+	/>
+</div>

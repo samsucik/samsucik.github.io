@@ -14,7 +14,7 @@
 		mobile: '(max-width: 736px)'
 	});
 
-	$(function() {
+	$(document).ready(function() {
 
 		var	$window = $(window),
 			$body = $('body');
@@ -115,6 +115,17 @@
 				if (skel.vars.os == 'wp' && skel.vars.osVersion < 10)
 					$('#headerToggle, #header, #main')
 						.css('transition', 'none');
+
+	  /* =======================
+	  // Zoom Image
+	  ======================= */
+	  $(".page img, .post img").attr("data-action", "zoom");
+	  $(".page a img, .post a img").removeAttr("data-action", "zoom");
+	  // repeat after images are loaded
+		// $("img").attr("data-action", "zoom");
+	 //  $window.on('load', function() {
+	 //  	$(".page a img, .post a img").removeAttr("data-action", "zoom");
+		// });
 
 	});
 

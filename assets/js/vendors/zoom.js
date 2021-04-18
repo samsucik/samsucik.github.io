@@ -211,6 +211,19 @@
       imageWrapTransform += ' translateZ(0)'
     }
 
+    $("#footer").css("visibility", "hidden")
+    $("#header").css("visibility", "hidden")
+
+    this._elementsWithOverflowChanged = []
+    var parent = this._targetImageWrap
+    while (parent.id != "main") {
+      if ($(parent).css("overflow") != "visible") {
+        $(parent).css("overflow", "visible")
+        this._elementsWithOverflowChanged.push([parent, $(parent).css("overflow")])
+      }
+      parent = parent.parentNode
+    }
+
     $(this._targetImage)
       .css({
         '-webkit-transform': targetTransform,
@@ -255,6 +268,14 @@
     $(this._targetImage)
       .one($.support.transition.end, $.proxy(this.dispose, this))
       .emulateTransitionEnd(300)
+
+    $("#footer").css("visibility", "visible")
+    $("#header").css("visibility", "visible")
+
+    function revertOverflow(element_overflow) {
+      $(element_overflow[0]).css("overflow", element_overflow[1])
+    }
+    $.each(this._elementsWithOverflowChanged, revertOverflow)
   }
 
   Zoom.prototype.dispose = function () {
