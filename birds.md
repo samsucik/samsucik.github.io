@@ -8,4 +8,9 @@ show_in_menu: true
 ---
 
 {%- include img.html src="assets/images/sokol.jpg" alt="sokol" -%}
+
+Haha, hihi, this is some normal text...
+
+And this is another paragraph!
+
 {%- include img.html src="assets/images/brhlik.jpg" alt="brhlik" -%}

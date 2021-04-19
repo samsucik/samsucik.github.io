@@ -209,6 +209,7 @@
 /* Sections/Article */
 
 	section, article {
+		line-height: 1.75em;
 		margin-bottom: 3em;
 
 		> :last-child,
@@ -287,6 +288,14 @@
 				margin: 0 auto;
 				width: auto;
 			}
+		}
+		.caption-box {
+			background: rgb(236, 236, 236);
+		    padding: 5px 15px;
+		    font-size: 0.85em;
+		    font-style: italic;
+		    color: black;
+		    text-align: center;
 		}
 	}
 
@@ -716,17 +725,14 @@
 				background-color: #e8edec;
 			}
 		}
+		.container {
+			font-size: 17px;
+		}
 	}
 
 /* Wide */
 
 	@include breakpoint(wide) {
-
-		/* Basic */
-
-			body, input, textarea, select {
-				font-size: 17pt;
-			}
 
 		/* Header */
 
@@ -744,6 +750,10 @@
 
 			#main {
 				margin-left: 300px;
+
+				.container {
+					font-size: 17px;
+				}
 			}
 
 	}
@@ -763,6 +773,9 @@
 					&.cover {
 						padding: 5em 0;
 					}
+				}
+				.container {
+					font-size: 18px;
 				}
 			}
 
@@ -826,7 +839,6 @@
 					list-style: none;
 					li {
 						a {
-							font-size: 0.8em;
 							padding-top: 0.5em;
 							padding-bottom: 0.5em;
 
@@ -854,6 +866,10 @@
 
 			#main {
 				margin-left: 20%;
+
+				.container {
+					font-size: 19px;
+				}
 			}
 
 	}
@@ -1038,6 +1054,9 @@
 						padding: 4em 0;
 					}
 				}
+				.container {
+					font-size: 20px;
+				}
 			}
 	}
 
@@ -1087,6 +1106,9 @@
 							padding: 0 1em;
 						}
 					}
+				}
+				.container {
+					font-size: 22px;
 				}
 			}
 
