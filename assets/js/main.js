@@ -115,18 +115,40 @@
 				if (skel.vars.os == 'wp' && skel.vars.osVersion < 10)
 					$('#headerToggle, #header, #main')
 						.css('transition', 'none');
-
+		
 	  /* =======================
 	  // Zoom Image
 	  ======================= */
 	  $(".page img, .post img").attr("data-action", "zoom");
 	  $(".page a img, .post a img").removeAttr("data-action", "zoom");
-	  // repeat after images are loaded
-		// $("img").attr("data-action", "zoom");
-	 //  $window.on('load', function() {
-	 //  	$(".page a img, .post a img").removeAttr("data-action", "zoom");
-		// });
 
+		$(".birds-section").each(function(idx){
+			$.fn.resizeImages = function(that){
+				$this = that;
+				var allWHRatios = [];
+				$("img", $this).each(function(idx){
+					allWHRatios.push(this.naturalWidth/this.naturalHeight);
+				});
+				var maxWidth = $($this).width();
+				var maxHeight = maxWidth/allWHRatios.reduce((a, b) => a + b, 0);
+				$(".image-container", $this).each(function(idx){
+					$(this).css("height", (maxHeight-1)+"px");
+				});
+				var verticalPadding = parseInt($($this).css("padding-top")) + parseInt($($this).css("padding-bottom"));
+				$($this).css("height", (maxHeight+verticalPadding)+"px");
+			};
+
+			var $images = $("img", this);
+			var loaded_images_count = 0;
+			var thisContainer = this;
+			$($images).css("visibility", "hidden");
+			$images.load(function(){
+			    loaded_images_count++;
+			    if (loaded_images_count == $images.length) {
+			      $.fn.resizeImages(thisContainer);
+			      $($images).css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0}, 500);
+			    }
+			});
+		});
 	});
-
 })(jQuery);

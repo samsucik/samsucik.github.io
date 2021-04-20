@@ -189,7 +189,7 @@
 	}
 
 	p, ul, ol, dl, table {
-		margin-bottom: 2em;
+		margin-bottom: 1em;
 	}
 
 	dl {
@@ -289,13 +289,44 @@
 				width: auto;
 			}
 		}
+	}
+	.image-container {
+		margin-bottom: 1em;
+		display: inline-block;
+
 		.caption-box {
-			background: rgb(236, 236, 236);
+			background: #eeeeee;
 		    padding: 5px 15px;
 		    font-size: 0.85em;
 		    font-style: italic;
 		    color: black;
 		    text-align: center;
+			border-color: #8f8f8f;
+			border-width: 1px;
+			border-top-width: 0;
+			border-style: solid;
+			border-radius: 0 0 3px 3px;
+		}
+	}
+	.birds-section {
+		// height: 50vh;
+		background: black;
+		// text-align: center;
+		padding: 5px;
+		// visibility: hidden;
+
+		.image-container {
+			padding: 5px;
+			height: inherit;
+			margin: 0;
+
+			img {
+				max-height: 100%;
+			}
+
+			.caption-box {
+				display: none;
+			}
 		}
 	}
 
