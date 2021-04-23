@@ -123,7 +123,7 @@
 	  $(".page a img, .post a img").removeAttr("data-action", "zoom");
 
 		$(".birds-section").each(function(idx){
-			$.fn.resizeImages = function(that){
+			$.fn.resizeImages = function(that, numImages){
 				$this = that;
 				var allWHRatios = [];
 				$("img", $this).each(function(idx){
@@ -131,11 +131,11 @@
 				});
 				var maxWidth = $($this).width();
 				var maxHeight = maxWidth/allWHRatios.reduce((a, b) => a + b, 0);
+				maxHeight = Math.min(maxHeight, 450);
 				$(".image-container", $this).each(function(idx){
-					$(this).css("height", (maxHeight-1)+"px");
+					$(this).css("height", (maxHeight-numImages)+"px");
 				});
 				var verticalPadding = parseInt($($this).css("padding-top")) + parseInt($($this).css("padding-bottom"));
-				$($this).css("height", (maxHeight+verticalPadding)+"px");
 			};
 
 			var $images = $("img", this);
@@ -143,12 +143,14 @@
 			var thisContainer = this;
 			$($images).css("visibility", "hidden");
 			$images.load(function(){
-			    loaded_images_count++;
-			    if (loaded_images_count == $images.length) {
-			      $.fn.resizeImages(thisContainer);
-			      $($images).css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0}, 500);
-			    }
+		    loaded_images_count++;
+		    if (loaded_images_count == $images.length) {
+		      $.fn.resizeImages(thisContainer, $images.length);
+		      $($images).css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0}, 500);
+		    }
 			});
 		});
+		
+    zoomWrapperFunction($);
 	});
 })(jQuery);

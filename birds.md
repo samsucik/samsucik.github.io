@@ -1,20 +1,12 @@
 ---
-layout: page
+layout: page-fullwidth
 title: Birds
-subtitle: Pictures of birds
+subtitle:
 url: birds
 icon: fa-dove
 show_in_menu: true
+show_page_header: false
 ---
-
-{%- include birds-section.html -%}
-
-{%- include img.html src="assets/images/avatar.jpg" alt="avatar" -%}
-
-{%- include img.html src="assets/images/sokol.jpg" alt="sokol" -%}
-
-Haha, hihi, this is some normal text...
-
-And this is another paragraph!
-
-{%- include img.html src="assets/images/brhlik.jpg" alt="brhlik" -%}
+{% for bird in site.data.birds %}
+	{%- include birds-section.html bird=bird -%}
+{% endfor %}

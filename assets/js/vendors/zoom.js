@@ -1,4 +1,5 @@
-+function ($) { "use strict";
+var zoomWrapperFunction = function ($) {
+  "use strict";
 
   /**
    * The zoom service
@@ -291,9 +292,5 @@
     }
   }
 
-  // wait for dom ready (incase script included before body)
-  $(function () {
-    new ZoomService().listen()
-  })
-
-}(jQuery)
+  new ZoomService().listen()
+}

@@ -1,5 +1,11 @@
+{%- comment -%}
+  Include vars:
+  	bird
+{%- endcomment -%}
 <div class="birds-section">
-	{%- include img.html src="assets/images/brhlik.jpg" alt="brhlik" -%}
-
-	{%- include img.html src="assets/images/sokol.jpg" alt="sokol" -%}
+	<h3>{{bird.name-en}} / {{bird.name-sk}} / <i>{{bird.name-latin}}</i></h3>
+	{% for filename in bird.filenames %}
+		{% capture filename_full %}assets/images/{{filename}}.jpg{% endcapture %}
+		{%- include img.html src=filename_full alt="brhlik" -%}
+	{% endfor %}
 </div>
