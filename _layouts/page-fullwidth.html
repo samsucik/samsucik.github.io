@@ -6,7 +6,12 @@ layout: default
 <!-- Main -->
 <div id="main">
 	<!-- Page -->
-	<article class="shade-two">
+	{%- if page.show_page_header -%}
+		{% assign article-class = "" %}
+	{%- else -%}
+		{% assign article-class = "no-header" %}
+	{%- endif -%}
+	<article class={{ article-class }}>
 	  <div class="container full-width">
 			{%- if page.show_page_header -%}
 				<header>

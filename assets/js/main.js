@@ -131,7 +131,7 @@
 				});
 				var maxWidth = $($this).width();
 				var maxHeight = maxWidth/allWHRatios.reduce((a, b) => a + b, 0);
-				maxHeight = Math.min(maxHeight, 450);
+				maxHeight = Math.min(maxHeight, 400);
 				$(".image-container", $this).each(function(idx){
 					$(this).css("height", (maxHeight-numImages)+"px");
 				});
@@ -139,6 +139,7 @@
 			};
 
 			var $images = $("img", this);
+			var loadingOverlay = $(".loading", this);
 			var loaded_images_count = 0;
 			var thisContainer = this;
 			$($images).css("visibility", "hidden");
@@ -146,7 +147,12 @@
 		    loaded_images_count++;
 		    if (loaded_images_count == $images.length) {
 		      $.fn.resizeImages(thisContainer, $images.length);
-		      $($images).css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0}, 500);
+		      $($images).css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0}, 500, function(){
+		      	$(loadingOverlay).animate({opacity: 0.0}, 300, function(){
+			      	console.log("removing overlay");
+		      		$(this).remove();
+		      	});
+		      });
 		    }
 			});
 		});
