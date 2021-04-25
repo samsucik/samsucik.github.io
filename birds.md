@@ -3,7 +3,7 @@ layout: page-fullwidth
 title: Birds
 subtitle:
 url: birds
-icon: fa-dove
+icon: fa-crow
 show_in_menu: true
 show_page_header: false
 ---

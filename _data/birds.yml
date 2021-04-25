@@ -1,17 +1,21 @@
 - name-sk: brhlík obyčajný
   name-latin: Sitta europaea
   name-en: nuthatch
+  id: nuthatch
   filenames:
     - brhlik
+    - brhlik
+- name-sk: brhlík obyčajný
+  name-latin: Sitta europaea
+  name-en: kestrel
+  id: kestrel
+  filenames:
+    - sokol
     - sokol
 - name-sk: brhlík obyčajný
   name-latin: Sitta europaea
-  name-en: nuthatch
-  filenames:
-    - brhlik
-- name-sk: brhlík obyčajný
-  name-latin: Sitta europaea
-  name-en: nuthatch
+  name-en: moorhen
+  id: moorhen
   filenames:
     - brhlik
     - sokol

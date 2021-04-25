@@ -2,11 +2,13 @@
   Include vars:
   	bird
 {%- endcomment -%}
-<div class="birds-section">
-	<h3>{{bird.name-en}} / {{bird.name-sk}} / <i>{{bird.name-latin}}</i></h3>
-	{% for filename in bird.filenames %}
-		{% capture filename_full %}assets/images/{{filename}}.jpg{% endcapture %}
-		{%- include img.html src=filename_full alt="brhlik" -%}
-	{% endfor %}
-	<div class="loading"></div>
+<div class="birds-section" id={{bird.id  | slugify }}>
+	<h3 class="heading">{{bird.name-en}} / {{bird.name-sk}} / <i>{{bird.name-latin}}</i></h3>
+	<div class="images">
+		{% for filename in bird.filenames %}
+			{% capture filename_full %}assets/images/{{filename}}.jpg{% endcapture %}
+			{%- include img.html src=filename_full alt="brhlik" -%}
+		{% endfor %}
+		<div class="loading"><img src="assets/images/loading.svg"></div>
+	</div>
 </div>
