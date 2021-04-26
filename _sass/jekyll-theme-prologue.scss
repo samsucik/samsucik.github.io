@@ -75,10 +75,18 @@
 		line-height: 1.75em;
 		color: #888;
 
+		// for sticky footer using flex
+		display: flex;
+  		flex-direction: column;
+
 		&.is-loading * {
 			@include vendor('transition', 'none !important');
 			@include vendor('animation', 'none !important');
 		}
+	}
+
+	html, body {
+		height: 100%; // for sticky footer using flex
 	}
 
 	input, textarea, select {
@@ -701,9 +709,9 @@
 		text-align: center;
 		background-color: $cl-dark;
 		padding: 1em 0 1em 0;
-		// box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05), inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.025);
-		font-size: 0.8em;
+		font-size: 0.7em;
 		color: white;
+		flex-shrink: 0; // for sticky footer using flex
 
 		.copyright {
 			cursor: default;
@@ -728,6 +736,8 @@
 /* Main */
 
 	#main {
+		flex: 1 0 auto; // for sticky footer using flex
+
 		margin-left: $sidebar-width-full;
 		> section {
 			text-align: center;
