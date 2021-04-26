@@ -1,22 +1,21 @@
-- name-sk: brhlík obyčajný
-  name-latin: Sitta europaea
-  name-en: nuthatch
-  id: nuthatch
+- name-sk: sýkorka bielolíca
+  name-latin: Parus major
+  name-en: great tit
+  id: great-tit
   filenames:
-    - brhlik
-    - brhlik
-- name-sk: brhlík obyčajný
-  name-latin: Sitta europaea
-  name-en: kestrel
-  id: kestrel
+    - great-tit-1
+    - great-tit-2
+- name-sk: oriešok hnedý
+  name-latin: Troglodytes troglodytes
+  name-en: wren
+  id: wren
   filenames:
-    - sokol
-    - sokol
-- name-sk: brhlík obyčajný
-  name-latin: Sitta europaea
+    - wren-1
+    - wren-2
+- name-sk: sliepočka zelenonohá
+  name-latin: Gallinula chloropus
   name-en: moorhen
   id: moorhen
   filenames:
-    - brhlik
-    - sokol
-    - brhlik
+    - moorhen-1
+    - moorhen-2
