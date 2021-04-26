@@ -5,9 +5,6 @@ subtitle:
 url: about
 icon: fa-user
 show_in_menu: true
-permalink: /
-redirect_from:
-  - /about
 ---
 If you know me, you already know that I like natural language processing, nature, photography, and a number of other things[^1].
 
