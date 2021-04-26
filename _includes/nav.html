@@ -34,11 +34,12 @@
         {%- endif -%}
       {%- endfor -%}
     {%- endunless -%}
+    
     {%- if page.url == "/birds.html" -%}
       <hr>
       {%- for bird in site.data.birds -%}
         {%- assign _slug = bird.id | slugify -%}
-        <li><a href="#{{- _slug -}}" id="{{- _slug -}}-link" class="scrolly"><span>{{- bird.name-en -}}</span></a></li>
+        <li><a href="#{{- _slug -}}" id="{{- _slug -}}-link" class="scrolly subitem"><span>{{- bird.name-en | capitalize -}}</span></a></li>
       {%- endfor -%}
     {%- endif -%}
   </ul>

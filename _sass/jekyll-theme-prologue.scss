@@ -662,6 +662,7 @@
 						position: relative;
 						display: block;
 						font-size: 0.8em;
+						padding-right: 1.8em;
 
 						&::before {
 							position: absolute;
@@ -670,6 +671,7 @@
 							text-align: center;
 							width: 1.25em;
 							line-height: 1.75em;
+							font-size: 1em;
 						}
 					}
 
@@ -681,6 +683,11 @@
 						span::before {
 							color: #e27689;
 						}
+					}
+
+					&.subitem {
+						padding-top: 0.1em;
+						padding-bottom: 0.1em;
 					}
 				}
 			}
@@ -916,12 +923,10 @@
 					list-style: none;
 					li {
 						a {
-							padding-top: 0.5em;
-							padding-bottom: 0.5em;
+							// padding-top: 0.5em;
+							// padding-bottom: 0.5em;
 
 							span {
-								padding-right: 2.25em;
-
 								&::before {
 									left: 100%;
 									margin-left: -1.25em;
@@ -1046,6 +1051,10 @@
 					li {
 						a {
 							padding: 0.5em 1.25em 0.5em 1.25em;
+
+							span::before {
+								font-size: 1.3em;
+							}
 						}
 					}
 				}
