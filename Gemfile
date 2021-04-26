@@ -28,3 +28,5 @@ end
 # Performance-booster for watching directories on Windows
 gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 
+# For redirecting (e.g. changing the default page from index.html to something else).
+gem 'jekyll-redirect-from'
