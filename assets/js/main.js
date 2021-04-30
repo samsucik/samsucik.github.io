@@ -116,11 +116,11 @@
 					$('#headerToggle, #header, #main')
 						.css('transition', 'none');
 		
-	  /* =======================
-	  // Zoom Image
-	  ======================= */
-	  $(".page img, .post img").attr("data-action", "zoom");
-	  $(".page a img, .post a img").removeAttr("data-action", "zoom");
+		/* =======================
+		// Zoom Image
+		======================= */
+		$(".page img, .post img").attr("data-action", "zoom");
+		$(".page a img, .post a img").removeAttr("data-action", "zoom");
 
 		var birdsMaxImageHeight = 400;
 		$(".birds-section > .images").each(function(idx){
@@ -139,24 +139,37 @@
 				var verticalPadding = parseInt($($this).css("padding-top")) + parseInt($($this).css("padding-bottom"));
 			};
 
+			var maybe_animate_section_fadein = function(loaded_images_count, $images, thisContainer, loadingOverlay) {
+			    if (loaded_images_count == $images.length) {
+			      $.fn.resizeImages(thisContainer, $images.length);
+			      $($images).css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0}, 500, function(){
+			      	$(loadingOverlay).animate({opacity: 0.0}, 300, function(){
+			      		$(this).remove();
+			      		$(thisContainer).css({height: "auto"});
+			      	});
+			      });
+			    }
+			}
+
 			var $images = $(".single-image-container > img", this);
 			var loadingOverlay = $(".loading", this);
 			var loaded_images_count = 0;
 			var thisContainer = this;
 			$($images).css("visibility", "hidden");
 
-			$images.on("load", function(){
-		    loaded_images_count++;
-		    if (loaded_images_count == $images.length) {
-		      $.fn.resizeImages(thisContainer, $images.length);
-		      $($images).css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0}, 500, function(){
-		      	$(loadingOverlay).animate({opacity: 0.0}, 300, function(){
-		      		$(this).remove();
-		      		$(thisContainer).css({height: "auto"});
-		      	});
-		      });
-		    }
+			$($images).each(function(idx){
+				var isLoaded = this.complete && this.naturalHeight !== 0;
+				if (isLoaded) {
+					loaded_images_count++;
+					maybe_animate_section_fadein(loaded_images_count, $images, thisContainer, loadingOverlay)
+				} else {
+					$(this).on("load", function(){
+					    loaded_images_count++;
+						maybe_animate_section_fadein(loaded_images_count, $images, thisContainer, loadingOverlay)
+					});
+				}
 			});
+
 		});
 		
     zoomWrapperFunction($);
