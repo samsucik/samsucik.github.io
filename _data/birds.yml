@@ -1,3 +1,10 @@
+- name-sk: kavka tmavá
+  name-latin: Corvus monedula
+  name-en: jackdaw
+  id: jackdaw
+  filenames:
+    - jackdaw-1
+    - jackdaw-2
 - name-sk: sýkorka bielolíca
   name-latin: Parus major
   name-en: great tit
