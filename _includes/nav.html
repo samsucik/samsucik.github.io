@@ -35,7 +35,7 @@
       {%- endfor -%}
     {%- endunless -%}
     
-    {%- if page.url == "/birds.html" -%}
+    {%- if page.url == "/birds/" -%}
       <hr>
       {%- for bird in site.data.birds -%}
         {%- assign _slug = bird.id | slugify -%}
