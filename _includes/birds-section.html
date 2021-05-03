@@ -7,7 +7,8 @@
 	<div class="images">
 		{% for filename in bird.filenames %}
 			{% capture filename_full %}assets/images/birds/{{filename}}.jpg{% endcapture %}
-			{%- include img.html src=filename_full alt="brhlik" -%}
+			{% capture alt_text %}{{bird.name-en}} / {{bird.name-sk}} / {{bird.name-latin}}{% endcapture %}
+			{%- include img.html src=filename_full alt=alt_text -%}
 		{% endfor %}
 		<div class="loading"><img src="/assets/images/loading.svg"></div>
 	</div>

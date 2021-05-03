@@ -10,5 +10,7 @@
 	 	 data-action="zoom"
 	 	 class="image fit"
 	/>
-	<div class="caption-box">some caption that is fairly long but not terribly long...</div>
+	{%- unless include.caption == null -%}
+		<div class="caption-box">{{include.caption}}</div>
+	{%- endunless -%}
 </div>
