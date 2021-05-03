@@ -1,4 +1,4 @@
-var zoomWrapperFunction = function ($) {
+var zoomWrapperFunction = function ($, $elem) {
   "use strict";
 
   /**
@@ -13,12 +13,13 @@ var zoomWrapperFunction = function ($) {
     this._$document = $(document)
     this._$window   = $(window)
     this._$body     = $(document.body)
+    this._$elem     = $elem
 
     this._boundClick = $.proxy(this._clickHandler, this)
   }
 
   ZoomService.prototype.listen = function () {
-    this._$body.on('click', '[data-action="zoom"]', $.proxy(this._zoom, this))
+    this._$elem.on('click', '[data-action="zoom"]', $.proxy(this._zoom, this))
   }
 
   ZoomService.prototype._zoom = function (e) {
@@ -125,6 +126,8 @@ var zoomWrapperFunction = function ($) {
     this._targetImageWrap = null
 
     this._targetImage = img
+    this._displayWidth = Number(img.clientWidth);
+    this._displayHeight = Number(img.clientHeight);
 
     this._$body = $(document.body)
   }
@@ -153,6 +156,7 @@ var zoomWrapperFunction = function ($) {
     $(this._targetImage)
       .addClass('zoom-img')
       .attr('data-action', 'zoom-out')
+      .height(this._displayHeight);
 
     this._overlay           = document.createElement('div')
     this._overlay.className = 'zoom-overlay'
@@ -199,8 +203,8 @@ var zoomWrapperFunction = function ($) {
     var viewportY = scrollTop + ($(window).height() / 2)
     var viewportX = ($(window).width() / 2)
 
-    var imageCenterY = imageOffset.top + (this._targetImage.height / 2)
-    var imageCenterX = imageOffset.left + (this._targetImage.width / 2)
+    var imageCenterY = imageOffset.top + (this._displayHeight / 2)
+    var imageCenterX = imageOffset.left + (this._displayWidth / 2)
 
     this._translateY = viewportY - imageCenterY
     this._translateX = viewportX - imageCenterX
