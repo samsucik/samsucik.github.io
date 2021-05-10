@@ -1,3 +1,10 @@
+- name-sk: drozd červenkavý
+  name-latin: Turdus iliacus
+  name-en: redwing
+  id: redwing
+  filenames:
+    - redwing-1
+    - redwing-2
 - name-sk: kavka tmavá
   name-latin: Corvus monedula
   name-en: jackdaw
