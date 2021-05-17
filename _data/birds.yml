@@ -1,3 +1,10 @@
+- name-sk: rybárik riečny
+  name-latin: Alcedo atthis
+  name-en: kingfisher
+  id: kingfisher
+  filenames:
+    - kingfisher-1
+    - kingfisher-2
 - name-sk: drozd červenkavý
   name-latin: Turdus iliacus
   name-en: redwing
