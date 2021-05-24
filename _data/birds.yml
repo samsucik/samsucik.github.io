@@ -1,3 +1,10 @@
+- name-sk: ľabtuška lúčna
+  name-latin: Anthus pratensis
+  name-en: meadow pipit
+  id: meadow-pipit
+  filenames:
+    - meadow-pipit-1
+    - meadow-pipit-2
 - name-sk: rybárik riečny
   name-latin: Alcedo atthis
   name-en: kingfisher
