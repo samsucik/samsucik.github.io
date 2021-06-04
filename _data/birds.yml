@@ -1,3 +1,10 @@
+- name-sk: kolibkárik spevavý
+  name-latin: Phylloscopus trochilus
+  name-en: willow warbler
+  id: willow-warbler
+  filenames:
+    - willow-warbler-1
+    - willow-warbler-2
 - name-sk: ľabtuška lúčna
   name-latin: Anthus pratensis
   name-en: meadow pipit
