@@ -1,3 +1,10 @@
+- name-sk: volavka popolavá
+  name-latin: Ardea cinerea
+  name-en: grey heron
+  id: grey-heron
+  filenames:
+    - grey-heron-1
+    - grey-heron-2
 - name-sk: kolibkárik spevavý
   name-latin: Phylloscopus trochilus
   name-en: willow warbler
