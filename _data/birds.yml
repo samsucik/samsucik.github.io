@@ -1,3 +1,10 @@
+- name-sk: škorec lesklý
+  name-latin: Sturnus vulgaris
+  name-en: starling
+  id: starling
+  filenames:
+    - starling-1
+    - starling-2
 - name-sk: volavka popolavá
   name-latin: Ardea cinerea
   name-en: grey heron
